@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatos - DS Construções</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Link completo da biblioteca de ícones -->
+  <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+  <!-- ABA LATERAL ESQUERDA: ORÇAMENTO DIRETO NO WHATSAPP -->
+  <aside class="aba-cadastro" id="abaCadastro">
+    <div class="aba-gatilho" id="abaGatilho">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>ORÇAMENTO</span>
+    </div>
+
+    <button type="button" class="aba-fechar" id="abaFechar">&times;</button>
+
+    <div class="aba-conteudo" id="areaForm">
+      <h3>📋 Solicitar Orçamento</h3>
+      <p>Preencha abaixo e envie seu pedido direto para o nosso WhatsApp.</p>
+
+      <form id="formOrcamentoZap" style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="campo-grupo">
+          <label for="orcNome">👤 Seu Nome</label>
+          <input type="text" id="orcNome" placeholder="Digite seu nome" required>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="orcTel">📱 Seu WhatsApp</label>
+          <input type="tel" id="orcTel" placeholder="(62) 99999-9999" required>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="orcServico">🏗️ O que você precisa?</label>
+          <input type="text" id="orcServico" placeholder="Ex: Construção, Reforma, Acabamento..." required>
+        </div>
+
+        <button type="submit" class="btn-cadastrar">📲 Enviar no WhatsApp</button>
+      </form>
+    </div>
+
+    <!-- IMAGEM DE AGRADECIMENTO + LINK OFICIAL DO SEU WHATSAPP -->
+    <div id="areaAgradecimento" style="display: none; flex-direction: column; align-items: center; text-align: center; gap: 15px;">
+      <img src="IMAGENS/20240303090306_casa.jpg" alt="Obrigado" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 2px solid #ff3030;">
+      <h3>🎉 Obrigado!</h3>
+      <p style="font-size: 14px;">Seu pedido foi copiado! Clique abaixo para abrir o WhatsApp e colar a mensagem:</p>
+
+      <a href="https://wa.me/message/CYJKF7X4QJU2A1" target="_blank" class="btn-cadastrar" style="width: 100%; text-decoration: none; display: block;">
+        📲 Abrir WhatsApp Agora
+      </a>
+
+      <button type="button" class="btn-cadastrar" id="btnFecharObrigado" style="width: 100%; border-color: #555; color: #aaa;">Fechar</button>
+    </div>
+  </aside>
+
+  <!-- MENU DE NAVEGAÇÃO -->
+  <header>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="quemSomos.html">Quem Somos</a>
+      <a href="contatos.html">Contato</a>
+
+      <a href="index.html" class="logo-direita">
+        <img src="IMAGENS/Estacio_Logo_3e39bd3cdc.png" alt="Logo">
+      </a>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO DE CONTATO -->
+  <main id="contato">
+    <h1>📞 Contato</h1>
+    <p>Escolha um dos canais abaixo para falar diretamente com a nossa equipe.</p>
+
+    <div class="contato-grid">
+      <!-- Cartão WhatsApp -->
+      <a href="https://wa.me/message/CYJKF7X4QJU2A1" target="_blank" class="contato-card">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+        <small>(62) 99262-4006</small>
+      </a>
+
+      <!-- Cartão Instagram -->
+      <a href="https://www.instagram.com/xy_samira_mira?knvt=MWFoemlkM2UxM205aA%3D%3D&utm_source=qr" target="_blank" class="contato-card">
+        <i class="fa-brands fa-instagram"></i>
+        <span>Instagram</span>
+        <small>@xy_samira_mira</small>
+      </a>
+
+      <!-- Cartão E-mail (Copia e abre no aplicativo de e-mail) -->
+      <a href="mailto:samirafernandes.dev@://gmail.com" onclick="copiarEmail()" class="contato-card">
+        <i class="fa-regular fa-envelope"></i>
+        <span>E-mail</span>
+        <small id="texto-email">samirafernandes.dev@gmail.com</small>
+      </a>
+    </div>
+
+    <!-- Mapa centralizado -->
+    <div class="mapa-box">
+      <h3>📍 Nossa Localização</h3>
+      <p>R. BS 37 - São Domingos, Goiânia - GO</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3824.039329577193!2d-49.3348119!3d-16.5745279!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e8a577a0819cf%3A0xaca2f25767cc3b9!2sR.%20BS%2037%20-%20S%C3%A3o%20Domingos%2C%20Goi%C3%A2nia%20-%20GO!5e0!3m2!1spt-BR!2sbr!4v1795377990240!5m2!1spt-BR!2sbr" width="600" height="400" style="border:0; border-radius: 12px; max-width: 100%; display: block; margin: 20px auto;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p class="copyright">© 2026 DS CONSTRUÇÕES. Todos os direitos reservados. <span class="emoji-obra">🏗️</span></p>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DO WHATSAPP FIXO NA TELA -->
+  <a href="https://wa.me/message/CYJKF7X4QJU2A1" target="_blank" class="zap-flutuante" title="Falar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- JAVASCRIPT COMPLETO -->
+  <script>
+    // 1. Centraliza blocos e textos sem bagunçar os cartões nem a aba lateral
+    document.body.style.textAlign = 'center';
+    document.querySelectorAll('header, main, footer, h1, h2, h3, p, .mapa-box').forEach(el => {
+      if (!el.closest('.aba-cadastro')) {
+        el.style.textAlign = 'center';
+        el.style.marginLeft = 'auto';
+        el.style.marginRight = 'auto';
+      }
+    });
+
+    const contatoGrid = document.querySelector('.contato-grid');
+    if (contatoGrid) {
+      contatoGrid.style.display = 'flex';
+      contatoGrid.style.flexWrap = 'wrap';
+      contatoGrid.style.justifyContent = 'center';
+      contatoGrid.style.alignItems = 'center';
+      contatoGrid.style.gap = '25px';
+      contatoGrid.style.maxWidth = '1000px';
+      contatoGrid.style.margin = '40px auto';
+    }
+
+    // 2. Ajusta a logo no canto direito do menu
+    const logoImg = document.querySelector('nav img');
+    if (logoImg) {
+      logoImg.style.height = '45px';
+      logoImg.style.width = 'auto';
+      logoImg.style.objectFit = 'contain';
+      const linkLogo = logoImg.parentElement;
+      if (linkLogo && linkLogo.tagName === 'A') {
+        linkLogo.style.position = 'absolute';
+        linkLogo.style.right = '40px';
+        linkLogo.style.border = 'none';
+        linkLogo.style.padding = '0';
+      }
+    }
+
+    // 3. Copiar e-mail ao clicar
+    function copiarEmail() {
+      navigator.clipboard.writeText("samirafernandes.dev@gmail.com");
+      const texto = document.getElementById("texto-email");
+      texto.innerText = "✅ E-mail copiado!";
+      texto.style.color = "#ff3030";
+      setTimeout(() => {
+        texto.innerText = "samirafernandes.dev@gmail.com";
+        texto.style.color = "";
+      }, 2500);
+    }
+
+    // 4. Aba Lateral de Orçamento -> Copia os dados e exibe o botão oficial do WhatsApp
+    const abaCadastro = document.getElementById('abaCadastro');
+    const abaGatilho = document.getElementById('abaGatilho');
+    const abaFechar = document.getElementById('abaFechar');
+    const formOrcamentoZap = document.getElementById('formOrcamentoZap');
+    const areaForm = document.getElementById('areaForm');
+    const areaAgradecimento = document.getElementById('areaAgradecimento');
+    const btnFecharObrigado = document.getElementById('btnFecharObrigado');
+
+    abaGatilho.onclick = () => abaCadastro.classList.toggle('aberta');
+    abaFechar.onclick = () => abaCadastro.classList.remove('aberta');
+
+    // Arrastar para a direita para abrir
+    let inicioX = 0;
+    abaGatilho.onmousedown = (e) => inicioX = e.clientX;
+    window.onmouseup = (e) => {
+      if (inicioX !== 0 && e.clientX - inicioX > 40) abaCadastro.classList.add('aberta');
+      inicioX = 0;
+    };
+
+    formOrcamentoZap.onsubmit = (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('orcNome').value;
+      const telefone = document.getElementById('orcTel').value;
+      const servico = document.getElementById('orcServico').value;
+
+      const texto = `Olá, DS Construções! 🏗️ Gostaria de solicitar um orçamento:\n\n👤 Nome: ${nome}\n📱 WhatsApp: ${telefone}\n🛠️ Serviço: ${servico}`;
+
+      // Copia o orçamento pronto na memória do dispositivo
+      navigator.clipboard.writeText(texto);
+
+      // Mostra a imagem de agradecimento e o botão direto para o seu WhatsApp
+      areaForm.style.display = 'none';
+      areaAgradecimento.style.display = 'flex';
+      formOrcamentoZap.reset();
+    };
+
+    btnFecharObrigado.onclick = () => {
+      abaCadastro.classList.remove('aberta');
+      setTimeout(() => {
+        areaAgradecimento.style.display = 'none';
+        areaForm.style.display = 'flex';
+      }, 400);
+    };
+  </script>
+
+</body>
+</html>

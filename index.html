@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DS Construções - Construção e Reforma</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Link completo da biblioteca de ícones -->
+  <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+  <!-- ABA LATERAL ESQUERDA: ORÇAMENTO DIRETO NO WHATSAPP + IMAGEM DE AGRADECIMENTO -->
+  <aside class="aba-cadastro" id="abaCadastro">
+    <div class="aba-gatilho" id="abaGatilho">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>ORÇAMENTO</span>
+    </div>
+
+    <button type="button" class="aba-fechar" id="abaFechar">&times;</button>
+
+    <div class="aba-conteudo" id="areaForm">
+      <h3>📋 Solicitar Orçamento</h3>
+      <p>Preencha abaixo e envie seu pedido direto para o nosso WhatsApp.</p>
+
+      <form id="formOrcamentoZap" style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="campo-grupo">
+          <label for="orcNome">👤 Seu Nome</label>
+          <input type="text" id="orcNome" placeholder="Digite seu nome" required>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="orcTel">📱 Seu WhatsApp</label>
+          <input type="tel" id="orcTel" placeholder="(62) 99999-9999" required>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="orcServico">🏗️ O que você precisa?</label>
+          <input type="text" id="orcServico" placeholder="Ex: Construção, Reforma, Acabamento..." required>
+        </div>
+
+        <button type="submit" class="btn-cadastrar">📲 Enviar no WhatsApp</button>
+      </form>
+    </div>
+
+    <!-- IMAGEM DE AGRADECIMENTO + LINK OFICIAL DO SEU WHATSAPP -->
+    <div id="areaAgradecimento" style="display: none; flex-direction: column; align-items: center; text-align: center; gap: 15px;">
+      <img src="IMAGENS/20240303090306_casa.jpg" alt="Obrigado" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 2px solid #ff3030;">
+      <h3>🎉 Obrigado!</h3>
+      <p style="font-size: 14px;">Seu pedido foi copiado! Clique abaixo para abrir o WhatsApp e colar a mensagem:</p>
+
+      <a href="https://wa.me" target="_blank" class="btn-cadastrar" style="width: 100%; text-decoration: none; display: block;">
+        📲 Abrir WhatsApp Agora
+      </a>
+
+      <button type="button" class="btn-cadastrar" id="btnFecharObrigado" style="width: 100%; border-color: #555; color: #aaa;">Fechar</button>
+    </div>
+  </aside>
+
+  <header>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="quemSomos.html">Quem Somos</a>
+      <a href="contatos.html">Contato</a>
+
+      <!-- Logo no canto direito -->
+      <a href="index.html" class="logo-direita">
+        <img src="IMAGENS/Estacio_Logo_3e39bd3cdc.png" alt="Logo">
+      </a>
+    </nav>
+
+    <h1>D.S Construção</h1>
+    <p>Transformamos casas e espaços comerciais com engenharia precisa e acabamento que valoriza seu imóvel.</p>
+  </header>
+
+  <!-- BANNER PRINCIPAL -->
+  <main>
+    <section class="banner">
+      <div class="banner-texto">
+        <p class="destaque">CONSTRUÇÃO • REFORMA • ACABAMENTO</p>
+        <h2>Construindo sonhos, <span>Transformando espaços. &#x1f4dd;</span></h2>
+      </div>
+    </section>
+
+    <!-- SEGUNDA SEÇÃO: GALERIA -->
+    <section class="galeria">
+      <div class="galeria-titulo">
+        <p class="destaque">Confira algumas imagens ilustrativas de Construção, reformas e acabamento.</p>
+      </div>
+      <div class="galeria-container">
+        <button class="seta">❮</button>
+        <div class="galeria-imagens" id="galeriaimagens">
+          <img src="IMAGENS/20240303090306_casa.jpg" alt="Imagem ilustrativa de Construção">
+          <img src="IMAGENS/Materiais-de-Construcao-em-Geral.jpg" alt="Imagem ilustrativa de Construção">
+          <img src="IMAGENS/pedreiro-de-pedreiro-de-construcao.jpg" alt="Imagem ilustrativa de Construção">
+          <img src="IMAGENS/Antes-de-construir-uma-casa-o-que-precisa-ser-decidido-no-projeto-EMR-Projetos-rpe5sqnu9uekfp86s5ib1rgwkmdfuxdlabwgsw14lk.jpg" alt="Imagem ilustrativa de Construção">
+          <img src="IMAGENS/Planejamento-da-Casa-em-Construcao_1280x720-1000x600.jpg" alt="Imagem ilustrativa de Construção">
+        </div>
+        <button class="seta">❯</button>
+      </div>
+      <p class="aviso-imagens">* Imagens utilizadas apenas para fins ilustrativos.</p>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p class="copyright">© 2026 DS CONSTRUÇÕES. Todos os direitos reservados. <span class="emoji-obra">🏗️</span></p>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DO WHATSAPP FIXO NA TELA -->
+  <a href="https://wa.me" target="_blank" class="zap-flutuante" title="Falar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- JAVASCRIPT COMPLETO (CENTRALIZAÇÃO + LOGO + GALERIA + ORÇAMENTO NO ZAP) -->
+  <script>
+    // 1. Centraliza textos e blocos sem afetar a aba lateral nem a galeria
+    document.body.style.textAlign = 'center';
+    document.querySelectorAll('header, main, section, footer, h1, h2, h3, p').forEach(el => {
+      if (!el.closest('.aba-cadastro')) {
+        el.style.textAlign = 'center';
+        el.style.marginLeft = 'auto';
+        el.style.marginRight = 'auto';
+      }
+    });
+
+    // 2. Ajusta a logo no canto direito do menu
+    const logoImg = document.querySelector('nav img');
+    if (logoImg) {
+      logoImg.style.height = '45px';
+      logoImg.style.width = 'auto';
+      logoImg.style.objectFit = 'contain';
+      const linkLogo = logoImg.parentElement;
+      if (linkLogo && linkLogo.tagName === 'A') {
+        linkLogo.style.position = 'absolute';
+        linkLogo.style.right = '40px';
+        linkLogo.style.border = 'none';
+        linkLogo.style.padding = '0';
+      }
+    }
+
+    // 3. Galeria de imagens (Botões + Arrastar com o mouse)
+    const galeria = document.querySelector('.galeria-imagens');
+    const botoes = document.querySelectorAll('.galeria-container button');
+
+    if (botoes[0]) {
+      botoes[0].addEventListener('click', () => {
+        galeria.scrollBy({ left: -620, behavior: 'smooth' });
+      });
+    }
+
+    if (botoes[1]) {
+      botoes[1].addEventListener('click', () => {
+        galeria.scrollBy({ left: 620, behavior: 'smooth' });
+      });
+    }
+
+    let estaArrastando = false;
+    let posicaoInicialX;
+    let scrollInicial;
+
+    if (galeria) {
+      galeria.addEventListener('mousedown', (e) => {
+        estaArrastando = true;
+        posicaoInicialX = e.pageX - galeria.offsetLeft;
+        scrollInicial = galeria.scrollLeft;
+      });
+
+      galeria.addEventListener('mouseleave', () => {
+        estaArrastando = false;
+      });
+
+      galeria.addEventListener('mouseup', () => {
+        estaArrastando = false;
+      });
+
+      galeria.addEventListener('mousemove', (e) => {
+        if (!estaArrastando) return;
+        e.preventDefault();
+        const x = e.pageX - galeria.offsetLeft;
+        const distancia = (x - posicaoInicialX) * 1.5;
+        galeria.scrollLeft = scrollInicial - distancia;
+      });
+
+      galeria.querySelectorAll('img').forEach(img => {
+        img.addEventListener('dragstart', (e) => e.preventDefault());
+      });
+    }
+
+    // 4. Aba Lateral de Orçamento -> Copia os dados e exibe o botão oficial do seu WhatsApp
+    const abaCadastro = document.getElementById('abaCadastro');
+    const abaGatilho = document.getElementById('abaGatilho');
+    const abaFechar = document.getElementById('abaFechar');
+    const formOrcamentoZap = document.getElementById('formOrcamentoZap');
+    const areaForm = document.getElementById('areaForm');
+    const areaAgradecimento = document.getElementById('areaAgradecimento');
+    const btnFecharObrigado = document.getElementById('btnFecharObrigado');
+
+    abaGatilho.onclick = () => abaCadastro.classList.toggle('aberta');
+    abaFechar.onclick = () => abaCadastro.classList.remove('aberta');
+
+    // Arrastar para a direita para abrir
+    let inicioX = 0;
+    abaGatilho.onmousedown = (e) => inicioX = e.clientX;
+    window.onmouseup = (e) => {
+      if (inicioX !== 0 && e.clientX - inicioX > 40) abaCadastro.classList.add('aberta');
+      inicioX = 0;
+    };
+
+    formOrcamentoZap.onsubmit = (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('orcNome').value;
+      const telefone = document.getElementById('orcTel').value;
+      const servico = document.getElementById('orcServico').value;
+
+      const texto = `Olá, DS Construções! 🏗️ Gostaria de solicitar um orçamento:\n\n👤 Nome: ${nome}\n📱 WhatsApp: ${telefone}\n🛠️ Serviço: ${servico}`;
+
+      // Copia o orçamento pronto na memória do dispositivo
+      navigator.clipboard.writeText(texto);
+
+      // Mostra a imagem de agradecimento e o botão oficial do seu WhatsApp
+      areaForm.style.display = 'none';
+      areaAgradecimento.style.display = 'flex';
+      formOrcamentoZap.reset();
+    };
+
+    btnFecharObrigado.onclick = () => {
+      abaCadastro.classList.remove('aberta');
+      setTimeout(() => {
+        areaAgradecimento.style.display = 'none';
+        areaForm.style.display = 'flex';
+      }, 400);
+    };
+  </script>
+
+</body>
+</html>

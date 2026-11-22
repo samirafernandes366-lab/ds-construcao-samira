@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quem Somos - DS Construções</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Link completo dos ícones para aparecerem nos cartões -->
+  <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+  <!-- ABA LATERAL ESQUERDA: ORÇAMENTO DIRETO NO WHATSAPP + IMAGEM DE AGRADECIMENTO -->
+  <aside class="aba-cadastro" id="abaCadastro">
+    <div class="aba-gatilho" id="abaGatilho">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>ORÇAMENTO</span>
+    </div>
+
+    <button type="button" class="aba-fechar" id="abaFechar">&times;</button>
+
+    <div class="aba-conteudo" id="areaForm">
+      <h3>📋 Solicitar Orçamento</h3>
+      <p>Preencha abaixo e envie seu pedido direto para o nosso WhatsApp.</p>
+
+      <form id="formOrcamentoZap" style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="campo-grupo">
+          <label for="orcNome">👤 Seu Nome</label>
+          <input type="text" id="orcNome" placeholder="Digite seu nome" required>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="orcTel">📱 Seu WhatsApp</label>
+          <input type="tel" id="orcTel" placeholder="(62) 99999-9999" required>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="orcServico">🏗️ O que você precisa?</label>
+          <input type="text" id="orcServico" placeholder="Ex: Construção, Reforma, Acabamento..." required>
+        </div>
+
+        <button type="submit" class="btn-cadastrar">📲 Enviar no WhatsApp</button>
+      </form>
+    </div>
+
+    <!-- IMAGEM DE AGRADECIMENTO + LINK GARANTIDO DO SEU WHATSAPP -->
+    <div id="areaAgradecimento" style="display: none; flex-direction: column; align-items: center; text-align: center; gap: 15px;">
+      <img src="IMAGENS/20240303090306_casa.jpg" alt="Obrigado" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 2px solid #ff3030;">
+      <h3>🎉 Obrigado!</h3>
+      <p style="font-size: 14px;">Seu pedido foi copiado! Clique abaixo para abrir o WhatsApp e colar a mensagem:</p>
+
+      <a href="https://wa.me/message/CYJKF7X4QJU2A1" target="_blank" class="btn-cadastrar" style="width: 100%; text-decoration: none; display: block;">
+        📲 Abrir WhatsApp Agora
+      </a>
+
+      <button type="button" class="btn-cadastrar" id="btnFecharObrigado" style="width: 100%; border-color: #555; color: #aaa;">Fechar</button>
+    </div>
+  </aside>
+
+  <!-- MENU DE NAVEGAÇÃO LIMPO E IGUAL NAS 3 PÁGINAS -->
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="quemSomos.html">Quem Somos</a>
+    <a href="contatos.html">Contato</a>
+
+    <a href="index.html" class="logo-direita">
+      <img src="IMAGENS/Estacio_Logo_3e39bd3cdc.png" alt="Logo">
+    </a>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="quem-somos-secao">
+    <h1>DS Construções</h1>
+    <h2>Quem Somos</h2>
+
+    <div class="quem-somos-texto">
+      <p>
+        Somos especialistas em transformar projetos em realidade, atuando com excelência do planejamento à entrega final da obra. 
+        Unimos técnica, segurança e materiais de alta qualidade para construir espaços duradouros e funcionais.
+      </p>
+      <p>
+        Com uma equipe comprometida com prazos e transparência em cada etapa, acompanhamos você desde o alicerce 
+        até o acabamento, garantindo tranquilidade e resultados acima do esperado.
+      </p>
+    </div>
+
+    <h2>Nossos Pilares</h2>
+
+    <div class="pilares-grid">
+      <!-- Missão -->
+      <div class="pilar-card">
+        <i class="fa-solid fa-helmet-safety"></i>
+        <h3>Missão</h3>
+        <p>Executar obras e projetos com rigor técnico, segurança e acabamento impecável, superando as expectativas de cada cliente.</p>
+      </div>
+
+      <!-- Visão -->
+      <div class="pilar-card">
+        <i class="fa-solid fa-building"></i>
+        <h3>Visão</h3>
+        <p>Ser referência em engenharia e construção pela confiabilidade, inovação nos métodos construtivos e cumprimento rigoroso de prazos.</p>
+      </div>
+
+      <!-- Valores -->
+      <div class="pilar-card">
+        <i class="fa-solid fa-handshake"></i>
+        <h3>Valores</h3>
+        <p>Transparência no orçamento, respeito às normas de segurança, compromisso com a qualidade e parceria verdadeira com o cliente.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p class="copyright">© 2026 DS CONSTRUÇÕES. Todos os direitos reservados. <span class="emoji-obra">🏗️</span></p>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DO WHATSAPP FIXO NA TELA -->
+  <a href="https://wa.me/message/CYJKF7X4QJU2A1" target="_blank" class="zap-flutuante" title="Falar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // 1. CENTRALIZA OS BLOCOS E TEXTOS SEM BAGUNÇAR OS PILARES NEM A ABA LATERAL
+    document.body.style.textAlign = 'center';
+
+    document.querySelectorAll('h1, h2, h3, p, section, main, footer').forEach(el => {
+      if (!el.closest('.aba-cadastro') && !el.closest('.pilar-card')) {
+        el.style.textAlign = 'center';
+        el.style.marginLeft = 'auto';
+        el.style.marginRight = 'auto';
+      }
+    });
+
+    // 2. CENTRALIZA OS 3 CARTÕES DE PILARES LADO A LADO
+    document.querySelectorAll('.pilares-grid').forEach(grid => {
+      grid.style.display = 'flex';
+      grid.style.flexWrap = 'wrap';
+      grid.style.justifyContent = 'center';
+      grid.style.alignItems = 'stretch';
+      grid.style.gap = '25px';
+      grid.style.maxWidth = '1100px';
+      grid.style.margin = '30px auto';
+    });
+
+    // 3. FORÇA O TAMANHO PEQUENO DA LOGO E PRENDE NO CANTO DIREITO
+    const logoImg = document.querySelector('nav img');
+    if (logoImg) {
+      logoImg.style.height = '45px';
+      logoImg.style.width = 'auto';
+      logoImg.style.objectFit = 'contain';
+      
+      const linkLogo = logoImg.parentElement;
+      if (linkLogo && linkLogo.tagName === 'A') {
+        linkLogo.style.position = 'absolute';
+        linkLogo.style.right = '40px';
+        linkLogo.style.border = 'none';
+        linkLogo.style.padding = '0';
+      }
+    }
+
+    // 4. ABA LATERAL DE ORÇAMENTO -> COPIA OS DADOS E ABRE O LINK OFICIAL DO WHATSAPP
+    const abaCadastro = document.getElementById('abaCadastro');
+    const abaGatilho = document.getElementById('abaGatilho');
+    const abaFechar = document.getElementById('abaFechar');
+    const formOrcamentoZap = document.getElementById('formOrcamentoZap');
+    const areaForm = document.getElementById('areaForm');
+    const areaAgradecimento = document.getElementById('areaAgradecimento');
+    const btnFecharObrigado = document.getElementById('btnFecharObrigado');
+
+    abaGatilho.onclick = () => abaCadastro.classList.toggle('aberta');
+    abaFechar.onclick = () => abaCadastro.classList.remove('aberta');
+
+    // Arrastar para a direita para abrir
+    let inicioX = 0;
+    abaGatilho.onmousedown = (e) => inicioX = e.clientX;
+    window.onmouseup = (e) => {
+      if (inicioX !== 0 && e.clientX - inicioX > 40) abaCadastro.classList.add('aberta');
+      inicioX = 0;
+    };
+
+    formOrcamentoZap.onsubmit = (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('orcNome').value;
+      const telefone = document.getElementById('orcTel').value;
+      const servico = document.getElementById('orcServico').value;
+
+      const texto = `Olá, DS Construções! 🏗️ Gostaria de solicitar um orçamento:\n\n👤 Nome: ${nome}\n📱 WhatsApp: ${telefone}\n🛠️ Serviço: ${servico}`;
+
+      // Copia a mensagem pronta na memória do computador/celular
+      navigator.clipboard.writeText(texto);
+
+      // Mostra a imagem de agradecimento e o botão direto para o seu WhatsApp Business
+      areaForm.style.display = 'none';
+      areaAgradecimento.style.display = 'flex';
+      formOrcamentoZap.reset();
+    };
+
+    btnFecharObrigado.onclick = () => {
+      abaCadastro.classList.remove('aberta');
+      setTimeout(() => {
+        areaAgradecimento.style.display = 'none';
+        areaForm.style.display = 'flex';
+      }, 400);
+    };
+  </script>
+
+</body>
+</html>
